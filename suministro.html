@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Rivfarca- Productos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=1IDptSTEjb_FgBn2FVuACpj42TNafw2J4">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(219, 219, 219, 0.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web');
+        
+        body {
+        
+            
+            background-attachment: fixed;	
+            background-size: cover;
+            }
+        
+        #container{
+            box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+            background: rgba(255, 255, 255, 0.90);
+            text-align: center;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1em auto;
+            height: 300px;
+            width: 500px;
+            
+        }
+        
+        
+        
+        /* 	Product details  */
+        .product-details {
+            position: relative;
+            text-align: left;
+            overflow: hidden;
+            padding: 10px;
+            height: 100%;
+            float: left;
+            width: 40%;
+        
+        }
+        
+        /* 	Product Name */
+        #container .product-details h1{
+            font-family: 'Old Standard TT', serif;
+            display: inline-block;
+            position: relative;
+            font-size: 34px;
+            color: #344055;
+            margin: 0;
+            
+        }
+        
+        #container .product-details h1:before{
+            position: absolute;
+            content: '';
+            right: 0%; 
+            top: 0%;
+            transform: translate(25px, -15px);
+            font-family: 'Farsan', cursive;
+            display: inline-block;
+            background: #FFA69E;
+            border-radius: 5px;
+            font-size: 14px;
+            padding: 5px;
+            color: #FFF;
+            margin: 0;
+            animation: chan-sh 6s ease infinite;
+        
+        }
+        
+        
+        @keyframes chan-sh {
+            from  {content: 'Envío gratis';}
+            to  {content: 'Nuevo';}
+            
+        }
+        
+        /*Product Rating  */
+        .hint-star {
+            display: inline-block;
+            margin-left: 0.5em;
+            color: gold;
+            width: 50%;
+        }
+        
+        
+        /* The most important information about the product */
+        #container .product-details > p {
+            font-family: 'Farsan', cursive;
+            text-align: center;
+            font-size: 20px;
+            color: #7d7d7d;
+            
+        }
+        
+        /* control */
+        
+        .control{
+            position: absolute;
+            bottom: 20%;
+            left: 22.8%;
+            
+        }
+        /* the Button */
+        .btn {
+            transform: translateY(0px);
+            transition: 0.3s linear;
+            background: #49C608;
+            border-radius: 5px;
+          position: relative;
+          overflow: hidden;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            color: #eee;
+            padding: 0;
+            margin: 0;
+            
+        }
+        
+        .btn:hover{transform: translateY(-4px);}
+        
+        .btn span {
+            font-family: 'Farsan', cursive;
+            transition: transform 0.3s;
+            display: inline-block;
+          padding: 10px 20px;
+            font-size: 1.2em;
+            margin:0;
+            
+        }
+        /* shopping cart icon */
+        .btn .price, .shopping-cart{
+            background: #333;
+            border: 0;
+            margin: 0;
+        }
+        
+        .btn .price {
+            transform: translateX(-10%); padding-right: 15px;
+        }
+        
+        /* the Icon */
+        .btn .shopping-cart {
+            transform: translateX(-100%);
+          position: absolute;
+            background: #333;
+            z-index: 1;
+          left: 0;
+          top: 0;
+        }
+        
+        /* buy */
+        .btn .buy {z-index: 3; font-weight: bolder;}
+        
+        .btn:hover .price {transform: translateX(-110%);}
+        
+        .btn:hover .shopping-cart {transform: translateX(0%);}
+        
+        
+        
+        /* product image  */
+        .product-image {
+            transition: all 0.3s ease-out;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            float: right;
+            width: 50%;
+            display: inline-block;
+        }
+        
+        #container img {width: 100%;height: 100%;}
+        
+        .info {
+            background: rgba(27, 26, 26, 0.9);
+            font-family: 'Farsan', cursive;
+            transition: all 0.3s ease-out;
+            transform: translateX(-100%);
+            position: absolute;
+            line-height: 1.9;
+            text-align: left;
+            font-size: 120%;
+            cursor: no-drop;
+            color: #FFF;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+        
+        .info h2 {text-align: center}
+        .product-image:hover .info{transform: translateX(0);}
+        
+        .info ul li{transition: 0.3s ease;}
+        .info ul li:hover{transform: translateX(50px) scale(1.3);}
+        
+        .product-image:hover img {transition: all 0.3s ease-out;}
+        .product-image:hover img {transform: scale(1.2, 1.2);}
+         
+        #container-slider{ position:relative; width: 100%; height: 100vh; }     
+        #slider { position: relative; display: block; width: 100%; height: 100%; min-height: 360px; }
+        #slider li {text-shadow:  0 3px 0 black; background-repeat: no-repeat;background-size: cover;background-position: center;position: absolute !important;top: 0 !important;left: 0 !important;width: 100%;height: 100%;display: block;-webkit-transition: opacity 1s;-moz-transition: opacity 1s;-ms-transition: opacity 1s;-o-transition: opacity 1s;transition: opacity 1s;opacity: 0; }
+        h1{text-transform: uppercase;font-size: 60px; font-weight: bold;}
+        h3{font-size: 16px;text-transform: capitalize}
+        #container-slider .arrowPrev, #container-slider .arrowNext{font-size: 30pt;color: rgba(204, 204, 204, 0.65);cursor: pointer;position: absolute;top: 50%;left: 50px}
+        .content_slider{padding: 15px 30px;color: #FFF;width: 100%;height: 100%;}/* #menu{z-index: 4; top: 7rem;  } */
+        .content_slider div{margin-top: 20vh;text-align: center;}
+              </style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="https://drive.google.com/uc?id=1KKGEz_j_YIiCWuioF-6RPDJQ0Mx52CSE" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+    </div>
+    <div class="page"></a>
+      <header class="section page-header rd-navbar-transparent-wrap">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="20px" data-xl-stick-up-offset="20px" data-xxl-stick-up-offset="20px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+     
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main-inner">
+                <div class="rd-navbar-main">
+                  <!--RD Navbar Panel-->
+                  <div class="rd-navbar-panel">
+                    <!--RD Navbar Toggle-->
+                    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                    <!--RD Navbar Brand-->
+                    <div class="rd-navbar-brand">
+                      <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="https://drive.google.com/uc?id=1VjhESZIaM3LQl1c3oxVdtPpo95-MjBYA" alt="" width="146" height="22"/><img class="brand-logo-light" src="https://drive.google.com/uc?id=1VjhESZIaM3LQl1c3oxVdtPpo95-MjBYA" alt="" width="155" height="22"/></a>
+                    </div>
+                  </div>
+                  <div class="rd-navbar-main-element">
+                    <div class="rd-navbar-nav-wrap">
+                      <ul class="rd-navbar-nav">
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="rd-nav-item active"><a class="rd-nav-link" href="suministro.html">Productos</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="services.html">Servicios</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="corporativo.html">Corporativo</a>
+                        </li>
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contáctanos</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="rd-navbar-collapse">
+                    <ul class="socialite-list">
+                      <li><a class="icon novi-icon socialite fa-whatsapp" href="https://api.whatsapp.com/send?phone=+584146194843"></a></li>
+                      <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/rivfar.ca"></a></li>
+                      <li><a class="icon novi-icon socialite fa-instagram" href="https://instagram.com/rivfarca?igshid=1xbcfrue4dzz9"></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+  <section id="sectionslider">	 
+    <ul id="slider">
+      <li id='nosotros' style="background-image: url('https://drive.google.com/uc?id=1KKGEz_j_YIiCWuioF-6RPDJQ0Mx52CSE');filter:brightness(50%);">
+        <div class="content_slider" >
+          <div>
+           <hgroup >
+            <h2 style="color: white"><span class="text-light">Equipos y </span>Suministros</h2>           
+         </hgroup>
+       </div>
+        </div>
+        </li>
+   </ul>
+   <div class="card-body" style="font-size: 20px; font-weight: bold;">
+    <div class="row justify-content-center clearfix form-inline">
+ 
+                    
+         <!-- /.blog-card 2-->
+         <div id="container">	
+            <div class="product-details">
+                    <h2>Equipos Agroindustriales</h2>
+                
+                    <span class="hint-star star">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </span>
+            <p class="information">"Diseño, Ingeniería, servicios y suministros."</p>
+             <div class="control">
+             <button onclick="window.location.href='/agro.html'" class="btn">
+            <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+            <span class="buy">Ver catálogo</span>
+            </button>
+            </div>
+            </div>
+            <div class="product-image">
+            <img src="https://drive.google.com/uc?id=1IdF849cidL0DbZO8LaRXWCuY2Iam0bQt" alt="">
+            <div class="info">
+            <h2>•Suministro de insumos Autopartes:</h2>
+            <ul>
+              <li><strong>•Separadores de impurea</strong></li>
+              <li><strong>•Ventiladores de alta y aja presión</strong></li>
+                        
+                    </ul>
+                </div>
+                </div>
+                </div>
+ <!-- /.blog-card 2-->
+ <div id="container">	
+  <div class="product-details">
+          <h2>Autopartes</h2>
+      
+          <span class="hint-star star">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star-half-o" aria-hidden="true"></i>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+          </span>
+  <p class="information">"Distribuidores de Marcas Premium"</p>
+   <div class="control">
+   <button onclick="window.location.href='/autopartes.html'" class="btn">
+  <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+  <span class="buy">Ver catálogo</span>
+  </button>
+  </div>
+  </div>
+  <div class="product-image">
+  <img src="https://drive.google.com/uc?id=1BYMW65TEjREKcFJTO5UDZ2143aB3lhEh" alt="">
+  <div class="info">
+  <h2>•Suministro de insumos Autopartes:</h2>
+  <ul>
+              <li><strong>•Liviano</strong></li>
+              <li><strong>•Pesado</strong></li>
+              
+          </ul>
+      </div>
+      </div>
+      </div>
+                      <!-- /.blog-card 3-->
+         <div id="container">	
+            <div class="product-details">
+                    <h2>Lubricantes</h2>
+                
+                    <span class="hint-star star">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </span>
+            <p class="information">"Marcas exclusivas en Lubricantes"</p>
+             <div class="control">
+             <button class="btn" onclick="window.location.href='/lubricantes.html'">
+            <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+            <span class="buy">Ver catálogo</span>
+            </button>
+            </div>
+            </div>
+            <div class="product-image">
+            <img src="https://drive.google.com/uc?id=1w0Xgw5f_uArg4T1q2AbdCmWUPSZUbCMG" alt="">
+            <div class="info">
+            <h2>•Suministro de Lubricantes y Grasas:</h2>
+            <ul>
+                        <li><strong>•Industrial</strong></li>
+                        <li><strong>•Automotríz</strong></li>
+                    
+    
+                    </ul>
+                </div>
+                </div>
+                </div>
+
+                      <!-- /.blog-card 4-->
+
+                      <div id="container">	
+                        <div class="product-details">
+                                <h2>Químicos</h2>
+                            
+                                <span class="hint-star star">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </span>
+                        <p class="information">" Venta de productos químicos online líder en el sector. ¡Nuestro portfolio está compuesto por más de 400 productos "</p>
+                         <div class="control">
+                         <button class="btn" onclick="window.location.href='/quimicos.html'">
+                        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        <span class="buy">Ver catálogo</span>
+                        </button>
+                        </div>
+                        </div>
+                        <div class="product-image">
+                        <img src="https://drive.google.com/uc?id=1u0Yvh_et5ZvaMgUh1TD5H2kX0kYYhlNK" alt="">
+                        <div class="info">
+                        <h2>•Suministro:</h2>
+                        <ul>
+                                    <li><strong>•Alimentación</strong></li>
+                                    <li><strong>•Tratamiento de Agua</strong></li>
+                                    <li><strong>•Agricultura</strong></li>
+                                
+                
+                                </ul>
+                            </div>
+                            </div>
+                            </div>
+
+                            
+            </div>
+          </div>
+        </section>
+       <!-- /.blog-card 5-->
+
+       <div id="container">	
+        <div class="product-details">
+                <h2>Insumos Eléctricos</h2>
+            
+                <span class="hint-star star">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </span>
+        <p class="information">" Descubre nuestro amplio catálogo de partes eléctricas. "</p>
+         <div class="control">
+         <button class="btn" onclick="window.location.href='/electricos.html'">
+        <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+        <span class="buy">Ver catálogo</span>
+        </button>
+        </div>
+        </div>
+        <div class="product-image">
+        <img src="https://drive.google.com/uc?id=1dz95oGQeTsojFxkHcAHtBpsLoGstzBX0" alt="">
+        <div class="info">
+        <h2>••Suministros de insumos Eléctricos:</h2>
+        <ul>
+                    <li><strong>•Alta Tensión</strong></li>
+                    <li><strong>•Baja Tensión</strong></li>
+              
+                
+
+                </ul>
+            </div>
+            </div>
+            </div>
+
+
+       
+        </div>
+           
+  </section>
+
+      <footer class="section footer-classic">
+        <div class="footer-inner-1">
+          <div class="container">
+            <div class="row row-40">
+              <div class="col-md-5 col-lg-3">
+                <h5> Contacto</h5>
+                <ul class="contact-list font-weight-bold">
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-map-marker"></div>
+                      </div>
+                      <div class="unit-body"><a href="#">Acarigua, Edo. Portuguesa - Venezuela</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-phone"></div>
+                      </div>
+                      <div class="unit-body"><a href="tel:#">+1 (800) 123 1234</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-clock"></div>
+                      </div>
+                      <div class="unit-body">
+                        <ul class="list-0">
+                          <li>Televentas: 8:00–17:00</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul><a class="d-inline-block big" href="mailto:#"> info@rivfarca.com</a>
+              </div>
+              <div class="col-md-6 col-lg-5">
+                <h5>Enlaces</h5>
+                <div class="row row-5 justify-content-between">
+                  <div class="col-sm-6">
+                    <ul class="footer-list big">
+                      <li><a href="/">Inicio</a></li>
+                      <li><a href="/nosotros.html">Nosotros</a></li>
+                      <li><a href="/suministro.html">Productos</a></li>
+                      <li><a href="/services.html">Servicios</a></li>
+                      <li><a href="/corporativo.html">Corporativo</a></li>
+                      <li><a href="/contacts">Contáctanos</a></li>
+                    
+                    </ul>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-4">
+                <h5>Sede</h5>
+                <div class="row row-30 align-items-center text-center">
+                  <div class="col-6 col-md-4 col-lg-6">   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.5900884800344!2d-69.21954548572064!3d9.544295683334338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e7dc12aaaf33d33%3A0x7da23b253497fd88!2sMicrom%20Industrial%20Venezuela%20C.A!5e0!3m2!1ses-419!2sve!4v1621243846698!5m2!1ses-419!2sve" alt="" width="150" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe></a></div>
+                  <div class="col-6 col-md-4 col-lg-6"><a class="link-image" href="#"> <img src="https://drive.google.com/uc?id=1XIp6An4gl5L_2fGyewwtWd39OzFWrs6r"  width="70" height="70"/></a></div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-inner-2">
+          <div style="text-align: justify; justify-items: center;" class="container">
+           <a>Rivfarca © 2021 Copyright:</a>  <a class="text-reset fw-bold" href="https://rivfarca.com/">rivfarca.com</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <!--coded by Starlight-->
+  </body>
+</html>

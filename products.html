@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Products</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=1IDptSTEjb_FgBn2FVuACpj42TNafw2J4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&family=Oswald&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900"> -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+<style>
+
+  #contenedor {
+      margin: 40px auto;
+      width: 750px;  /* Ancho del contenedor */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    }
+    
+    #contenedor input {
+    height: 32px;
+    
+    }
+    
+    #contenedor label {
+      font-family: 'Anton', sans-serif;
+    float: left;
+    cursor: pointer;
+    font-size: 15px;  /* Tamaño del texto de las pestañas */
+    line-height: 40px;
+    height: 40px;
+    padding: 0 20px;
+    display: block;
+    color: #888;  /* Color del texto de las pestañas */
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    background: #eee;  /* Fondo de las pestañas */
+    margin-right: 5px;
+    }
+    #contenedor input:hover + label {
+    
+    background: #ddd;  /* Fondo de las pestañas al pasar el cursor por encima */
+    color: #666;  /* Color del texto de las pestañas al pasar el cursor por encima */
+    }
+    
+    #contenedor input:checked + label {
+      
+    background: #03BB3F;  /* Fondo de las pestañas al presionar */
+    color: BLACK; /* Color de las pestañas al presionar */
+    z-index: 6;
+    line-height: 45px;
+    height: 45px;
+    position: relative;
+    top: -5px;
+    -webkit-transition-: .1s;
+    -moz-transition-: .1s;
+    -o-transition-: .1s;
+    -ms-transition-: .1s;
+    }
+    
+    .content {
+    position: relative;
+    width: 100%;
+    height: 350px;  /* Alto del contenido */
+    padding: 30px;
+    z-index: 5;
+    border-radius: 0 5px 5px 5px;
+    }
+    
+    .content div {
+      
+    position: absolute;
+    z-index: -100;
+    opacity: 0;
+    transition: all linear 0.1s;
+    }
+    
+    #contenedor input.tab-selector-1:checked ~ .content .content-1,
+    #contenedor input.tab-selector-2:checked ~ .content .content-2,
+    #contenedor input.tab-selector-3:checked ~ .content .content-3,
+    #contenedor input.tab-selector-4:checked ~ .content .content-4 {
+      z-index: 100;
+       opacity: 1;
+      -webkit-transition-: all ease-out 0.2s 0.1s;
+    -moz-transition-: all ease-out 0.2s 0.1s;
+    -o-transition-: all ease-out 0.2s 0.1s;
+    -ms-transition-: all ease-out 0.2s 0.1s;
+    }</style>
+  </head>
+  <body onLoad="myOnLoad()">
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <!-- <div class="preloader-body">
+        <div class="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p>Loading...</p>
+      </div> -->
+    </div>
+    <div class="page">
+        <header class="section page-header rd-navbar-transparent-wrap">
+            <!--RD Navbar-->
+            <div class="rd-navbar-wrap">
+              <nav class="rd-navbar rd-navbar-transparent" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="20px" data-xl-stick-up-offset="20px" data-xxl-stick-up-offset="20px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+                <!-- <div class="rd-navbar-aside-outer rd-navbar-collapse">
+                  <div class="rd-navbar-aside">
+                    <div class="rd-navbar-info">
+                      <div class="icon novi-icon mdi mdi-phone"></div><a href="tel:#">+1 (800) 123 1234</a>
+                    </div>
+                    <ul class="list-lined">
+                      <li><a href="#">Log in</a></li>
+                      <li><a href="#">Create an account</a></li>
+                    </ul>
+                  </div>
+                </div> -->
+                <div class="rd-navbar-main-outer">
+                  <div class="rd-navbar-main-inner">
+                    <div class="rd-navbar-main">
+                      <!--RD Navbar Panel-->
+                      <div class="rd-navbar-panel">
+                        <!--RD Navbar Toggle-->
+                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                        <!--RD Navbar Brand-->
+                        <div class="rd-navbar-brand">
+                           <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="https://drive.google.com/uc?id=1VjhESZIaM3LQl1c3oxVdtPpo95-MjBYA" alt="" width="146" height="22"/><img class="brand-logo-light" src="https://drive.google.com/uc?id=1VjhESZIaM3LQl1c3oxVdtPpo95-MjBYA" alt="" width="155" height="22"/></a>
+                        </div>
+                      </div>
+                      <div class="rd-navbar-main-element">
+                        <div class="rd-navbar-nav-wrap">
+                          <ul class="rd-navbar-nav">
+                            <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Inicio</a>
+                            </li>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Nosotros</a>
+                            </li>
+                            <li class="rd-nav-item active"><a class="rd-nav-link" href="products.html">Productos</a>
+                            </li>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Servicios</a>
+                            </li>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Corporativo</a>
+                            </li>
+                            <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contáctanos</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="rd-navbar-collapse">
+                        <ul class="socialite-list">
+                          <li><a class="icon novi-icon socialite fa-whatsapp" href="https://api.whatsapp.com/send?phone=+584146194843"></a></li>
+                          <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/rivfar.ca"></a></li>
+                          <li><a class="icon novi-icon socialite fa-instagram" href="https://instagram.com/rivfarca?igshid=1xbcfrue4dzz9"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </header>
+      <!-- Breadcrumbs-->
+      <section class="breadcrumbs-custom bg-image novi-background bg-primary">
+        <div class="container">
+          <ul class="breadcrumbs-custom-path">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="active">Productos</li>
+          </ul>
+          <div class="rd-navbar-collapse">
+            <ul class="socialite-list">
+              <li><a class="icon novi-icon socialite fa-whatsapp" href="https://api.whatsapp.com/send?phone=+584146194843"></a></li>
+              <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/rivfar.ca"></a></li>
+              <li><a class="icon novi-icon socialite fa-instagram" href="https://instagram.com/rivfarca?igshid=1xbcfrue4dzz9"></a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+   
+      <!-- Our Story-->
+      <section class="section section-lg bg-default">
+                   <div id="contenedor">
+                    <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+                    <label for="tab-1" class="tab-label-1">Productos</label>
+                    <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+                    <label for="tab-2" class="tab-label-2">Equipos Industriales</label>
+                    <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3" />
+                    <label for="tab-3" class="tab-label-3">Autopartes</label>
+                    <input id="tab-4" type="radio" name="radio-set" class="tab-selector-4" />
+                    <label for="tab-4" class="tab-label-4">Lubricantes</label>
+                    <div class="content">
+                    <div class="content-1">
+                     <base href="https://rivfarca.com/">
+                                
+                    <!-- <div id="content-1" class="content-1"> -->
+                        <h3>Catálogo</h3>
+                        <section style="height: auto;" id="equioagro" class="card-body">
+                            <h2 style="text-align: center;" class="card-title">Productos</h2>
+                              <section class="card-body">
+                                <div class="container">
+                                      <div class="row justify-content-center clearfix form-inline">
+                                          <!-- Elementos generados a partir del JSON -->
+                                          <main id="items" class="col-sm-8 row"></main>
+                                          
+                             
+                                        
+                                      </div>
+                                  </div>
+                        </section>
+                      </section>
+                        
+                    </div>    
+                   
+                   
+                    <!-- content 2 -->
+                    <div id="content-2" class="content-2">
+                        <h3>Equipos Agroindustriales</h3>
+                        
+                    
+                    </div>
+                    <!-- content 3 -->
+                    <div class="content-3">
+                        Autopartes
+                    </div>
+                    <!-- content 4 -->
+                    <div class="content-4">
+                        Lubricantes
+                    </div>
+                    </div>
+                    </div>
+
+    </section>
+    
+      <footer class="section footer-classic">
+        <div class="footer-inner-1">
+          <div class="container">
+            <div class="row row-40">
+              <div class="col-md-5 col-lg-3">
+                <h5> Contacto</h5>
+                <ul class="contact-list font-weight-bold">
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-map-marker"></div>
+                      </div>
+                      <div class="unit-body"><a href="#">Acarigua, Edo. Portuguesa - Venezuela</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-phone"></div>
+                      </div>
+                      <div class="unit-body"><a href="tel:#">+1 (800) 123 1234</a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs">
+                      <div class="unit-left">
+                        <div class="icon icon-sm icon-primary novi-icon mdi mdi-clock"></div>
+                      </div>
+                      <div class="unit-body">
+                        <ul class="list-0">
+                          <li>Televentas: 8:00–17:00</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul><a class="d-inline-block big" href="mailto:#"> info@rivfarca.com</a>
+              </div>
+              <div class="col-md-6 col-lg-5">
+                <h5>Enlaces</h5>
+                <div class="row row-5 justify-content-between">
+                  <div class="col-sm-6">
+                    <ul class="footer-list big">
+                      <li><a href="#">Inicio</a></li>
+                      <li><a href="#">Nosotros</a></li>
+                      <li><a href="#">Productos</a></li>
+                      <li><a href="#">Servicios</a></li>
+                      <li><a href="#">Corporativo</a></li>
+                      <li><a href="#">Contáctanos</a></li>
+                    
+                    </ul>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-4">
+                <h5>Sede</h5>
+                <div class="row row-30 align-items-center text-center">
+                  <div class="col-6 col-md-4 col-lg-6">   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.5900884800344!2d-69.21954548572064!3d9.544295683334338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e7dc12aaaf33d33%3A0x7da23b253497fd88!2sMicrom%20Industrial%20Venezuela%20C.A!5e0!3m2!1ses-419!2sve!4v1621243846698!5m2!1ses-419!2sve" alt="" width="150" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe></a></div>
+                  <div class="col-6 col-md-4 col-lg-6"><a class="link-image" href="#"> <img src="https://drive.google.com/uc?id=1XIp6An4gl5L_2fGyewwtWd39OzFWrs6r"  width="70" height="70"/></a></div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-inner-2">
+          <div class="container">
+           <a>Rivfarca © 2021 Copyright:</a>  <a class="text-reset fw-bold" href="https://rivfarca.com/">rivfarca.com</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+        <script>    window.onload = function () {
+
+        // Variables
+        const baseDeDatos = [
+            {
+                id: 1,
+                nombre: 'Descuentos',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1ElAKiY8qee9UAitBdWIJU7wS964tMozs'
+            },
+            {
+                id: 2,
+                nombre: 'Tostadora para cacao',
+                precio: 1000,
+                imagen: 'https://drive.google.com/uc?id=1phOgoOr8hSHptcAbN3jnBOxA73D0BppI'
+            },
+            {
+                id: 3,
+                nombre: 'Molino de martillos',
+                precio: 1200,
+                imagen: 'https://drive.google.com/uc?id=1l4moo1vvaFCdJJShMDNOnLgtUTQTeS7F'
+            },
+            {
+                id: 4,
+                nombre: 'Trilladora para Maíz',
+                precio: 500,
+                imagen: 'https://drive.google.com/uc?id=1bEnjWbuugcLm4GABOMcURiPYe7LC8cIi'
+            },
+            {
+                id: 5,
+                nombre: 'Enfriador para productos tostados',
+                precio: 600,
+                imagen: 'https://drive.google.com/uc?id=1KgSG8UhVSJpFyfXJuTcnknQK-86V9iNl'
+            },
+            {
+                id: 6,
+                nombre: 'Molino con ciclon',
+                precio: 800,
+                imagen: 'https://drive.google.com/uc?id=18WzDkYxEHVjqX1XsGRlH6zGgSLadR-l3'
+            },
+            {
+                id: 7,
+                nombre: 'Aceite 2050W - UHV',
+                precio: 20,
+                imagen: 'https://drive.google.com/uc?id=1UXG4qkPcvfunjxCnKIkG1kfhCM-tFQ_s'
+            },
+            {
+                id: 8,
+                nombre: 'Aditivo - UHV',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1Ab_eMgawnw4RIlXeCojgTl-n1rjzB5Ai'
+            },
+            {
+                id: 9,
+                nombre: 'Aditivo - UHV',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1ifvIYO7XskFPVTTkbYb11ky3pvL-_P9w'
+            },
+            {
+                id: 10,
+                nombre: 'Kit de tiempo - UHV',
+                precio: 10,
+                imagen: 'https://drive.google.com/uc?id=1ElAKiY8qee9UAitBdWIJU7wS964tMozs'
+            },
+            {
+                id: 11,
+                nombre: 'Kit de Croche - UHV',
+                precio: 10,
+                imagen: 'https://drive.google.com/uc?id=1LJFFCvEJ8ctKyUMfV3n2OM1BqSuSZTRA'
+            },
+            {
+                id: 12,
+                nombre: 'Filtros - UHV',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1Weg6OVSX_SbdcndBL9sV3w9bCTbGnw1p'
+            },
+            {
+                id: 13,
+                nombre: '<Levas- UHV >',
+                precio: 10,
+                imagen: 'https://drive.google.com/uc?id=1G6Z1dft0xqHQqV_o3hpj9ZbU14lrtjQc'
+            },
+            {
+                id: 14,
+                nombre: 'Kit de dirección - UHV',
+                precio: 10,
+                imagen: 'https://drive.google.com/uc?id=1K78EGgj7panuHXMRxfzGxws8bvQ6I3lA'
+            },
+            {
+                id: 15,
+                nombre: 'Discos - UHV',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1fo_CicXvXOmS2lMXYcNLz0UAArvluaB2'
+            },
+            {
+                id: 16,
+                nombre: 'Pastillas- UHV ',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1HSVwhwxgw5T0o-mdRWVulyAgVvldeVmn'
+            },
+            {
+                id: 17,
+                nombre: 'Dirección - UHV',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1we08pzI3nb5_Txa1O7qXyeZMDfGGyJIc'
+            },{
+                id: 18,
+                nombre: 'Bomba de aceite Optra Limited - MOCA',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1FpTePn4ue_mRG5NbqeDsJ6ZfsltXyBUM'
+            },
+            {
+                id: 19,
+                nombre: 'Kit de tiempo Chev Aveo - MOCA',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1tCGIs5fgIW6tYIfBVlUD0Ik4OHi3TeoV'
+            },
+            {
+                id: 20,
+                nombre: 'Correa de tiempo Hyundai Accent - MOCA ',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=1DZYaGzwDaKrXokcvSQTBde5i5bxThGNl'
+            },
+            {
+                id: 21,
+                nombre: 'Bomba de aceite Trailblazer - MOCA ',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            },
+            {
+                id: 22,
+                nombre: 'Concha biela Neón - MOCA',
+                precio: 5,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            },
+            {
+                id: 23,
+                nombre: 'M83072	CHEVROLET	KIT DE TIEMPO	KIT CADENA DE TIEMPO CHEVROLET - MOCA',
+                precio: 30.10,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            },
+            {
+                id: 24,
+                nombre: 'M86072	CHEVROLET	KIT DE TIEMPO	KIT CADENA DE TIEMPO CHEVROLET BLAZER - MOCA',
+                precio: 41.66,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            },
+            {
+                id: 25,
+                nombre: 'M86119	JEEP	KIT DE TIEMPO	KIT CADENA DE TIEMPO JEEP 242  - MOCA',
+                precio: 49.44,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            },
+            {   id: 26,
+                nombre: 'M86079	JEEP	KIT DE TIEMPO	KIT CADENA DE TIEMPO JEEP 242 / CHEROKEE - MOCA',
+                precio: 45.83,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            },
+            {   id: 27,
+                nombre: 'M83119	JEEP	KIT DE TIEMPO	KIT CADENA DE TIEMPO JEEP CHEROKEE - MOCA',
+                precio: 36.87,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            },
+            {   id: 28,
+                nombre: 'M83017	CHEVROLET	KIT DE TIEMPO	KIT CADENA TIEMPO CHEVROLET  - MOCA',
+                precio: 29.66,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            },     
+            {   id: 29,
+                nombre: 'M83001N	CHEVROLET	KIT DE TIEMPO	KIT CADENA TIEMPO CHEVROLET - MOCA',
+                precio: 27.71,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            }, 
+            {   id: 30,
+                nombre: 'M83135	CHEVROLET	KIT DE TIEMPO	KIT CADENA TIEMPO CHEVROLET BLAZER - MOCA',
+                precio: 30.10,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            },   
+            {   id: 31,
+                nombre: 'M86061	CHEVROLET	KIT DE TIEMPO	KIT CADENA TIEMPO CHEVROLET CENTURY 173 FI 2.8LTS / CELEBRITY - MOCA',
+                precio: 39.06,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            }, 
+            {   id: 32,
+                nombre: 'M86142	CHEVROLET	KIT DE TIEMPO	KIT CADENA TIEMPO CHEVROLET TRAILBLAZER - MOCA',
+                precio: 65.02,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            }, 
+            
+            {   id: 33,
+                nombre: 'M83054	FORD	KIT DE TIEMPO	KIT CADENA TIEMPO FORD 302/351W 5.0LTS DOUBLE - MOCA',
+                precio: 65.02,
+                imagen: 'https://drive.google.com/uc?id=18sClTt5A2uuNMbKCk0xqrnBRV1gjxUk3'
+            }, 
+    
+    
+    
+        
+        ];
+        function addproducts(evento) {
+        // Anyadimos el Nodo a nuestro carrito
+        producto.push(evento.target.getAttribute('marcador'))
+        // // Calculo el total
+        
+        
+        }
+        
+        let carrito = [];
+        let total = 0;
+        const DOMitems = document.querySelector('#items');
+        const DOMcarrito = document.querySelector('#carrito');
+        const DOMtotal = document.querySelector('#total');
+        const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+        const miLocalStorage = window.localStorage;
+    
+    
+        /**
+        * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+        */
+        function renderizarProductos() {
+        baseDeDatos.forEach((info) => {
+            // Estructura
+            const miNodo = document.createElement('div');
+            miNodo.classList.add('card', 'col-sm-4');
+            // Body
+            const miNodoCardBody = document.createElement('div');
+            miNodoCardBody.classList.add('card-body');
+            // Titulo
+            const miNodoTitle = document.createElement('h3');
+            miNodoTitle.classList.add('card-title');
+            miNodoTitle.textContent = info.nombre;
+        // // Description
+        //     const miNodoDescription = document.createElement('h3');
+        //     miNodoDescription.classList.add('card-body');
+        //     miNodoDescription.textContent = info.description;
+        // // Categoria
+        // |   const miNodoCategoria = document.createElement('h6');
+        //     miNodoCategoria.classList.add('card-body');
+        //     miNodoCategoria.textContent = info.categoria;
+        
+            // Imagen
+            const miNodoImagen = document.createElement('img');
+            miNodoImagen.classList.add('img-thumbnail');
+            miNodoImagen.setAttribute('src', info.imagen);
+            // Precio
+            const miNodoPrecio = document.createElement('h3');
+            miNodoPrecio.classList.add('card-text');
+            miNodoPrecio.textContent = info.precio + '$';
+            // Boton 
+            const miNodoBoton = document.createElement('button');
+            miNodoBoton.classList.add('btn', 'btn-primary');
+            miNodoBoton.textContent = 'Agregar al carro';
+            miNodoBoton.setAttribute('marcador', info.id);
+            miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+            // Insertamos
+            miNodoCardBody.appendChild(miNodoImagen);
+            miNodoCardBody.appendChild(miNodoTitle);
+            miNodoCardBody.appendChild(miNodoPrecio);
+            miNodoCardBody.appendChild(miNodoBoton);
+              miNodo.appendChild(miNodoCardBody);
+            DOMitems.appendChild(miNodo);
+        });
+        }
+        function renderizarAgro() {
+        baseDeDatos.forEach((info) => {
+            // Estructura
+            const miNodo = document.createElement('div');
+            miNodo.classList.add('card', 'col-sm-4');
+            // Body
+            const miNodoCardBody = document.createElement('div');
+            miNodoCardBody.classList.add('card-body');
+            // Titulo
+            const miNodoTitle = document.createElement('h3');
+            miNodoTitle.classList.add('card-title');
+            miNodoTitle.textContent = info.nombre;
+        // // Description
+        //     const miNodoDescription = document.createElement('h3');
+        //     miNodoDescription.classList.add('card-body');
+        //     miNodoDescription.textContent = info.description;
+        // // Categoria
+        // |   const miNodoCategoria = document.createElement('h6');
+        //     miNodoCategoria.classList.add('card-body');
+        //     miNodoCategoria.textContent = info.categoria;
+        
+            // Imagen
+            const miNodoImagen = document.createElement('img');
+            miNodoImagen.classList.add('img-thumbnail');
+            miNodoImagen.setAttribute('src', info.imagen);
+            // Precio
+            const miNodoPrecio = document.createElement('h3');
+            miNodoPrecio.classList.add('card-text');
+            miNodoPrecio.textContent = info.precio + '$';
+            // Boton 
+            const miNodoBoton = document.createElement('button');
+            miNodoBoton.classList.add('btn', 'btn-primary');
+            miNodoBoton.textContent = 'Agregar al carro';
+            miNodoBoton.setAttribute('marcador', info.id);
+            miNodoBoton.addEventListener('click', anyadirProductoAlCarrito, false);
+            // Insertamos
+            miNodoCardBody.appendChild(miNodoImagen);
+            miNodoCardBody.appendChild(miNodoTitle);
+            miNodoCardBody.appendChild(miNodoPrecio);
+            miNodoCardBody.appendChild(miNodoBoton);
+              miNodo.appendChild(miNodoCardBody);
+            DOMitems.appendChild(miNodo);
+        });
+        }
+        /**
+        * Evento para añadir un producto al carrito de la compra
+        */
+        function anyadirProductoAlCarrito(evento) {
+        // Anyadimos el Nodo a nuestro carrito
+        carrito.push(evento.target.getAttribute('marcador'))
+        // Calculo el total
+        calcularTotal();
+        // Actualizamos el carrito 
+        renderizarCarrito();
+        guardarCarritoEnLocalStorage();
+        
+        }
+        
+        /**
+        * Dibuja todos los productos guardados en el carrito
+        */
+        function renderizarCarrito() {
+         
+          DOMcarrito.textContent = '';
+        
+        
+        // Quitamos los duplicados
+        const carritoSinDuplicados = [...new Set(carrito)];
+        // Generamos los Nodos a partir de carrito
+        carritoSinDuplicados.forEach((item) => {
+            // Obtenemos el item que necesitamos de la variable base de datos
+            const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                // ¿Coincide las id? Solo puede existir un caso
+                return itemBaseDatos.id === parseInt(item);
+            });
+            // Cuenta el número de veces que se repite el producto
+            const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+                return itemId === item ? total += 1 : total;
+            }, 0);
+            // Creamos el nodo del item del carrito
+            const miNodo = document.createElement('li');
+            miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+            miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}$`;
+            // Boton de borrar
+            const miBoton = document.createElement('button');
+            miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+            miBoton.textContent = 'Quitar del carro';
+            miBoton.style.marginLeft = '1px';
+            miBoton.dataset.item = item;
+            miBoton.addEventListener('click', borrarItemCarrito, { passive: true});
+            // Mezclamos nodos
+            miNodo.appendChild(miBoton);
+
+            DOMcarrito.appendChild(miNodo);
+     
+        });
+        }
+        
+        /**
+        * Evento para borrar un elemento del carrito
+        */
+        function borrarItemCarrito(evento) {
+        // Obtenemos el producto ID que hay en el boton pulsado
+        const id = evento.target.dataset.item;
+        // Borramos todos los productos
+        carrito = carrito.filter((carritoId) => {
+            return carritoId !== id;
+        });
+        // volvemos a renderizar
+        renderizarCarrito();
+        // Calculamos de nuevo el precio
+        calcularTotal();
+        guardarCarritoEnLocalStorage();
+        }
+        
+        /**
+        * Calcula el precio total teniendo en cuenta los productos repetidos
+        */
+        function calcularTotal() {
+        // Limpiamos precio anterior
+        total = 0;
+        
+        // Recorremos el array del carrito
+        carrito.forEach((item) => {
+            // De cada elemento obtenemos su precio
+            const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                return itemBaseDatos.id === parseInt(item);
+            });
+            total = total + miItem[0].precio;
+            
+        });
+        // Renderizamos el precio en el HTML
+       
+          DOMtotal.textContent = total.toFixed(2);
+        }
+              
+     
+        
+           function vaciarCarrito() {
+                        // Limpiamos los productos guardados
+                        carrito = [];
+                        // Renderizamos los cambios
+                        renderizarCarrito();
+                        calcularTotal();
+                        // Borra LocalStorage
+                        localStorage.clear();
+        
+                    }
+        
+                    function guardarCarritoEnLocalStorage () {
+                        miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+                        
+                    }
+        
+                    function cargarCarritoDeLocalStorage () {
+                        // ¿Existe un carrito previo guardado en LocalStorage?
+                        if (miLocalStorage.getItem('carrito') !== null) {
+                            // Carga la información
+                            carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+                        }
+                    }
+                   
+                    // Eventos
+                    DOMbotonVaciar.addEventListener('click', vaciarCarrito, { passive: true});
+        
+                    // Inicio
+                    cargarCarritoDeLocalStorage();
+                    renderizarProductos();
+                    calcularTotal();
+                    renderizarCarrito();
+                }
+               
+        </script>
+</body>
+</html>   
+    <!--coded by Starlight-->
